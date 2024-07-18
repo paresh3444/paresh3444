@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="username" id="username"><br><br>
+    <input type="password" placeholder="password" id="password"><br><br>
+    <button type="submit7\" onclick="dataSumited()">Click Me</button>
+
+    <script>
+        function dataSumited(){
+            let username = document.getElementById('username').value
+            let password = document.getElementById('password').value
+            var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+            if(!password.match(regularExpression)){
+                console.log(username,password);
+            }else{
+                alert("Please Enter Strong Number");
+            }
+        }
+    </script>
+</body>
+</html>

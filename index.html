@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Color Change</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease; /* Optional: Add a smooth transition effect */
+        }
+    </style>
+</head>
+<body>
+
+    <input type="color" id="random" onclick="changeBodyColor">
+    <div id="bgcolor" style="width: 100%; height: 100vh;"></div>
+    <script>
+        function changeBodyColor() {
+            var changeBodyColor=document.getElementById("random");
+            var bgcolor=document.getElementById("bgcolor");
+
+            var selected=random.value;
+            bgcolor.style.background=selected;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        img{width: 30%;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkfCW86pMeBci7XqV773lxBY_cA-m9H2pMP3USAH_sGLvuhbhxlbXB9CuASvUew34jv8&usqp=CAU" alt="">
+
+    <img src="" alt="">
+    <img src="" alt="">
+    </div>
+
+
+    <button onclick="data()">Click Me</button>
+    <button onclick="data1()">Next</button>
+    <!-- <button onclick="data()">Next</button> -->
+
+    <script>
+        function data(){
+            document.getElementsByTagName("img")[0].src = 'https://static.cargurus.com/images/article/2021/01/15/09/59/best_muscle_cars-pic-10290526200842205482-1600x1200.jpeg'
+        }
+
+        function data1(){
+            document.getElementsByTagName("img")[1].src = 'https://cdn.motor1.com/images/mgl/g440ng/s3/rimac-nevera.jpg'
+            
+        }
+    </script>
+</body>
+</html>

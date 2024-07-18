@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(50, 57, 54);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .main{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            font-size: 50px;
+            color: white;
+        }
+        h1{
+            color: white;
+        }
+        .resetbtn{
+            width: 100px;
+            padding: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="color: white;">Hello</h2>
+    
+    <h1></h1>
+
+    <div class="main">
+        <button class="btn" onclick="data(0)"></button>
+        <button class="btn" onclick="data(1)"></button>
+        <button class="btn" onclick="data(2)"></button>
+        <button class="btn" onclick="data(3)"></button>
+        <button class="btn" onclick="data(4)"></button>
+        <button class="btn" onclick="data(5)"></button>
+        <button class="btn" onclick="data(6)"></button>
+        <button class="btn" onclick="data(7)"></button>
+        <button class="btn" onclick="data(8)"></button>
+    </div>
+
+        <button class="resetbtn" onclick="reset()">Reset</button>
+
+    <script>
+        let lastone = "X"
+
+        let values = ["","","","","","","","",""]
+
+        function data(index){
+            if(lastone == "X"){
+                lastone  = "O"
+            }else{
+                lastone = "X"
+            }
+            document.getElementsByClassName("btn")[index].innerHTML = lastone;
+            values[index] = lastone
+
+            document.getElementsByClassName("btn")[index].setAttribute("disabled", "true")
+
+            // X Win
+            if(values[0] == "X" && values[1] == "X" && values[2] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }if(values[3] == "X" && values[4] == "X" && values[5] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }if(values[6] == "X" && values[7] == "X" && values[8] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }
+
+            if(values[0] == "X" && values[3] == "X" && values[6] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }if(values[1] == "X" && values[4] == "X" && values[7] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }if(values[2] == "X" && values[5] == "X" && values[8] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }
+
+            if(values[0] == "X" && values[4] == "X" && values[8] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }if(values[2] == "X" && values[4] == "X" && values[6] == "X"){
+                document.getElementsByTagName("h1")[0].innerHTML = "X Win"
+            }
+
+            // O Win
+            if(values[0] == "O" && values[1] == "O" && values[2] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }if(values[3] == "O" && values[4] == "O" && values[5] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }if(values[6] == "O" && values[7] == "O" && values[8] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }
+
+            if(values[0] == "O" && values[3] == "O" && values[6] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }if(values[1] == "O" && values[4] == "O" && values[7] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }if(values[2] == "O" && values[5] == "O" && values[8] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }
+
+            if(values[0] == "O" && values[4] == "O" && values[8] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }if(values[2] == "O" && values[4] == "O" && values[6] == "O"){
+                document.getElementsByTagName("h1")[0].innerHTML = "O Win"
+            }
+
+            
+            
+        }
+       
+        function reset(){
+           document.getElementsByClassName("main").setAttribute("btn")[index].innerHTML = ""
+        }   
+        </script>
+</body>
+</html>

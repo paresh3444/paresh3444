@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(50, 57, 54);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        h1{
+            color: white;
+        }
+        #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            font-size: 50px;
+            color: white;
+        }
+        #reset{
+            width: 100px;
+            height: 50px;
+            margin-top: 10px;
+            background: gray;
+            font-size: 25px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1 id="winner"></h1>
+
+    <div class="box">
+        <button id="btn1"></button>
+        <button id="btn2"></button>
+        <button id="btn3"></button>
+        <button id="btn4"></button>
+        <button id="btn5"></button>
+        <button id="btn6"></button>
+        <button id="btn7"></button>
+        <button id="btn8"></button>
+        <button id="btn9"></button>
+    </div>
+
+    <button id="reset" onclick="resetData()">Reset</button>
+
+    <script>
+         let btn1 = document.getElementById("btn1")  
+         let btn2 = document.getElementById("btn2") 
+         let btn3 = document.getElementById("btn3") 
+         let btn4 = document.getElementById("btn4") 
+         let btn5 = document.getElementById("btn5") 
+         let btn6 = document.getElementById("btn6") 
+         let btn7 = document.getElementById("btn7") 
+         let btn8 = document.getElementById("btn8") 
+         let btn9 = document.getElementById("btn9") 
+
+         let turn = "X"
+         
+         function disabl(){
+            btn1.disabled = true
+            btn2.disabled = true
+            btn3.disabled = true
+            btn4.disabled = true
+            btn5.disabled = true
+            btn6.disabled = true
+            btn7.disabled = true
+            btn8.disabled = true
+            btn9.disabled = true
+         }
+
+         function checkBTN(el){
+            if(turn == "X"){
+                turn = "O"
+            }else{
+                turn = "X"
+            }
+            el.innerHTML = turn
+            el.disabled = true
+
+            if(btn1.innerHTML === 'X' && btn2.innerHTML === 'X' && btn3.innerHTML === 'X' || btn4.innerHTML === 'X' && btn5.innerHTML === 'X' && btn6.innerHTML === 'X' || btn7.innerHTML === 'X' && btn8.innerHTML === 'X' && btn9.innerHTML === 'X' || btn1.innerHTML === 'X' && btn4.innerHTML === 'X' && btn7.innerHTML === 'X' || btn2.innerHTML === 'X' && btn5.innerHTML === 'X' && btn8.innerHTML === 'X' || btn3.innerHTML === 'X' && btn6.innerHTML === 'X' && btn9.innerHTML === 'X' || btn1.innerHTML === 'X' && btn1.innerHTML === 'X' && btn5.innerHTML === 'X' && btn9.innerHTML === 'X' || btn3.innerHTML === 'X' && btn5.innerHTML === 'X' && btn7.innerHTML === 'X'){ 
+
+            document.getElementById('winner').innerHTML = "X is Winner"
+            disabl()
+
+            }else if(btn1.innerHTML === 'O' && btn2.innerHTML === 'O' && btn3.innerHTML === 'O' || btn4.innerHTML === 'O' && btn5.innerHTML === 'O' && btn6.innerHTML === 'O' || btn7.innerHTML === 'O' && btn8.innerHTML === 'O' && btn9.innerHTML === 'O' || btn1.innerHTML === 'O' && btn4.innerHTML === 'O' && btn7.innerHTML === 'O' || btn2.innerHTML === 'O' && btn5.innerHTML === 'O' && btn8.innerHTML === 'O' || btn3.innerHTML === 'O' && btn6.innerHTML === 'O' && btn9.innerHTML === 'O' || btn1.innerHTML === 'O' && btn1.innerHTML === 'O' && btn5.innerHTML === 'O' && btn9.innerHTML === 'O' || btn3.innerHTML === 'O' && btn5.innerHTML === 'O' && btn7.innerHTML === 'O'){
+
+            document.getElementById('winner').innerHTML = "O is Winner"
+            disabl()}
+         }
+
+         function resetData(){
+            btn1.innerHTML = ""
+            btn2.innerHTML = ""
+            btn3.innerHTML = ""
+            btn4.innerHTML = ""
+            btn5.innerHTML = ""
+            btn6.innerHTML = ""
+            btn7.innerHTML = ""
+            btn8.innerHTML = ""
+            btn9.innerHTML = ""
+            btn1.disabled = false
+            btn2.disabled = false
+            btn3.disabled = false
+            btn4.disabled = false
+            btn5.disabled = false
+            btn6.disabled = false
+            btn7.disabled = false
+            btn8.disabled = false
+            btn9.disabled = false
+         }
+
+         btn1.addEventListener('click', () => checkBTN(btn1))
+         btn2.addEventListener('click', () => checkBTN(btn2))
+         btn3.addEventListener('click', () => checkBTN(btn3))
+         btn4.addEventListener('click', () => checkBTN(btn4))
+         btn5.addEventListener('click', () => checkBTN(btn5))
+         btn6.addEventListener('click', () => checkBTN(btn6))
+         btn7.addEventListener('click', () => checkBTN(btn7))
+         btn8.addEventListener('click', () => checkBTN(btn8))
+         btn9.addEventListener('click', () => checkBTN(btn9))
+    </script>
+
+</body>
+</html>

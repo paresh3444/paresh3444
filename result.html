@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let guj = parseFloat(prompt("Enter Marks ="))
+        let hin = parseFloat(prompt("Enter Marks ="))
+        let eng = parseFloat(prompt("Enter Marks ="))
+        let sci = parseFloat(prompt("Enter Marks ="))
+        let soc = parseFloat(prompt("Enter Marks ="))
+        let sum = 0
+        let per
+        
+        sum = guj + hin + eng + sci + soc;
+        console.log(sum);
+        per = sum / 5;
+        console.log(per);
+        
+        if(guj > 33 && hin > 33 && eng > 33 && sci > 33 && soc > 33){
+            console.log("Pass")
+        }else{
+            console.log("Fail")
+        }   
+        
+        if(per > 80){
+            console.log("A Grade");
+        }else if(per > 60){
+            console.log("B Grade");
+        }else if(per > 40){
+            console.log("C Grade");
+        }else{
+            console.log("Fail");
+        }
+    </script>
+
+</body>
+</html>

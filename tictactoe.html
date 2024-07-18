@@ -1,0 +1,227 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            position: relative;
+        }
+        .line-vh1{
+            width: 5px;
+            height: 60vh;
+            background-color: black;
+        }
+        .line-vh2{
+            width: 5px;
+            height: 60vh;
+            background-color: black;
+            margin: 0px 100px;
+        }
+        .box-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .line-hz1{
+            width: 60vh;
+            height: 5px;
+            background-color: black;
+            margin-bottom: 200px;
+            margin-right: 15vh;
+            position: absolute;
+        }
+        .line-hz2{
+            width: 60vh;
+            height: 5px;
+            background-color: black;
+            margin-bottom: 500px;
+            margin-right: 15vh;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="line-vh1"></div>
+        <div class="line-vh2"></div> 
+    </div>
+
+    <div class="box-1">
+        <div class="line-hz1"></div>
+        <div class="line-hz2"></div> 
+    </div>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .main-box {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            background-color: gray;
+            border: 2px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }   
+
+        .box-1, .box-2, .box-3, .box-4, .box-5, .box-6, .box-7, .box-8, .box-9 {
+            width: 32%;
+            height: 200px;
+            background-color: burlywood;
+            border: 2px solid black;
+            font-size: 100px;
+            margin: 5px;
+        }
+        .main-box a{
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-box" onclick="data()">
+        <div class="box-1"><a href="">X</a></div>
+        <div class="box-1"><a href="">O</a></div>
+        <div class="box-1"><a href="">X</a></div>
+        <div class="box-1"><a href="">O</a></div>
+        <div class="box-1"><a href="">X</a></div>
+        <div class="box-1"><a href="">O</a></div>
+        <div class="box-1"><a href="">X</a></div>
+        <div class="box-1"><a href="">O</a></div>
+        <div class="box-1"><a href="">X</a></div>
+    </div>
+
+    <script>
+        function data(){
+            document.getElementsByClassName('main-box').innerHtml('X')
+            ('main-box')
+        }
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        h1{
+            color: white;
+        }
+        #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9 {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="btn1" onclick="checkBTN(this)"></button>
+        <button id="btn2" onclick="checkBTN(this)"></button>
+        <button id="btn3" onclick="checkBTN(this)"></button>
+        <button id="btn4" onclick="checkBTN(this)"></button>
+        <button id="btn5" onclick="checkBTN(this)"></button>
+        <button id="btn6" onclick="checkBTN(this)"></button>
+        <button id="btn7" onclick="checkBTN(this)"></button>
+        <button id="btn8" onclick="checkBTN(this)"></button>
+        <button id="btn9" onclick="checkBTN(this)"></button>
+    </div>
+
+    <script>
+        Player = 1;
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+        let btn5 = document.getElementById('btn5')
+        let btn6 = document.getElementById('btn6')
+        let btn7 = document.getElementById('btn7')
+        let btn8 = document.getElementById('btn8')
+        let btn9 = document.getElementById('btn9')
+
+    function checkBTN(el){
+
+        if(winner = check()){
+            alert(Winner + "On The Match")
+        }
+
+        if(Player %2 != 0){
+            el.innerHTML = 'O'
+            Player ++
+        }else{
+            el.innerHTML = 'X'
+            Player ++
+        }
+        
+
+    }
+    
+    function check(){
+        box1 = btn1.innerHTML
+        box2 = btn2.innerHTML
+        box3 = btn3.innerHTML
+        box4 = btn4.innerHTML
+        box5 = btn5.innerHTML
+        box6 = btn6.innerHTML
+        box7 = btn7.innerHTML
+        box8 = btn8.innerHTML
+        box9 = btn9.innerHTML
+
+       
+
+
+    }
+    
+    </script>
+
+</body>
+</html> -->

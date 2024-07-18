@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulb Control</title>
+  <style>
+    #bulb{
+        width: 300px;
+        height: 300px;
+    }
+  </style>
+</head>
+<body>
+
+<div><img src="./Image/Bulb Off.gif" alt=""></div><br><br>
+<button onclick="data()" id="Bulb">On-Off</button>
+
+
+<script>
+    var a = 1;
+    
+    function data(){
+        if(a %2 == 0){
+          document.getElementsByTagName('img')[0].src='./Image/Bulb Off.gif';
+        } 
+        else{
+          document.getElementsByTagName('img')[0].src='./Image/Bulb On.gif';
+        }
+        a++;
+        
+    }
+</script>
+
+</body>
+</html>

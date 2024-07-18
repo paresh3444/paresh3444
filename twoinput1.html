@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        input {
+            width: 15%;
+            margin: 15px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .table {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="data({username,password})">
+        <input type="text" placeholder="User Name" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <input type="submit">
+    </form>
+
+    <div class="table">
+        <table border="1" width="50%">
+            <tr>
+                <th>id</th>
+                <th>User Name</th>
+                <th>Password</th>
+            </tr>
+            <tbody id="dataAdd"></tbody>
+        </table>
+        
+    </div>
+    <h1></h1>
+
+    <script>
+        let store = []
+        function data(el) {
+            event.preventDefault()
+            let username = el.username.value.trim()
+            let password = el.password.value.trim()
+            let allTableData = ``
+
+            if (username && password) {
+
+                store.push({ username, password })
+            } else {
+                alert("Please Ckeck Input")
+            }
+            for (let i = 0; i < store.length; i++) {
+                allTableData += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${store[i].username}</td>
+                    <td>${store[i].password}</td>
+                    <td><button onClick= 'Delete(${i})'>Delete</button></td>
+
+                </tr>`
+            }
+
+            let dataAdd = document.getElementById("dataAdd").innerHTML = allTableData
+
+            // el.username.value = ""
+            // el.password.value = ""            
+        }
+
+        function Delete(index){
+            store.splice(index, 1);
+            // renderTable();
+        }
+    </script>
+</body>
+
+</html>

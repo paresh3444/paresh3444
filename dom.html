@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Part</title>
+</head>
+<body>
+    <p>demo</p>
+    <p class="class1">hello</p>
+    <p id="id1">helloworld</p>
+    <p id="id2">helloworld</p>
+
+    <p id="styleApply">Hello World</p>
+    <button onclick="data()">Click Me</button>
+
+    <script>
+        document.getElementsByTagName('p')[0].innerHTML = "Welcome"
+        document.getElementsByClassName('class1')[0].innerHTML = "heeeeeeee"
+        document.getElementById('id1').innerHTML = "<h1>houahoua</h1>"
+        document.getElementById('id2').innerText = "<h1>houahoua</h1>"
+
+            let color = 0;
+        function data(){ 
+            if(++color == 2) 
+            {
+                document.getElementById('styleApply').style.backgroundColor = "red"
+            }
+            else
+            {
+                document.getElementById('styleApply').style.backgroundColor = "blue"
+            }
+            
+
+        }
+
+    </script>
+</body>
+</html>

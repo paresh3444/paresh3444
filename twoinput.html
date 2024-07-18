@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .userinput {
+            display: flex;
+            justify-content: center;
+        }
+
+        label {
+            padding: 20px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 20px;
+            width: 100px;
+            height: 25px;
+        }
+
+        .userdata {
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="userinput">
+        <label>Name
+            <input type="text" id="input1">
+        </label>
+
+        <label>Last Name
+            <input type="text" id="input2">
+
+        </label>
+    </div>
+
+    <div class="button">
+        <button id="btnsubmit" onclick="btnsubmit()">Submit</button>
+        <button id="del" onclick="btndel()">Delete</button>
+    </div>
+
+    <div class="userdata">
+        <table border="1" width="50%" style="text-align: center;">
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+            </tr>
+            <tr id="data">
+                <td id="input1-data"></td>
+                <td id="input2-data"></td>
+            </tr>
+            <tbody id="new-data"></tbody>
+        </table>
+    </div>
+
+    <script>
+
+        const btnsubmit = () => {
+            let u1 = document.getElementById("input1").value.trim()
+            let u2 = document.getElementById("input2").value.trim()
+
+            if (u1 && u2) {
+                let new1 = document.getElementById("new-data")
+                let newRow = new1.insertRow()
+
+                let cell1 = newRow.insertCell(0)
+                let cell2 = newRow.insertCell(1)
+
+                cell1.innerText = u1
+                cell2.innerText = u2
+            }else{
+                alert("Please Fill in Both Filds")
+            }
+
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+        }
+
+
+
+
+
+        let btndel = () => {
+            // let new1 = document.getElementById("new-data")
+            // let newRow = new1
+
+            // let cell1 = newRow.remove(0)
+            // let cell2 = newRow.remove(1)
+            document.getElementById("new-fata").deleteRow(0);
+
+        }
+
+    </script>
+</body>
+
+</html>
